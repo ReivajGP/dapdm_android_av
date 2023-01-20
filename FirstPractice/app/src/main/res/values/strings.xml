@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">FirstPractice</string>
+
+    <!--  Splash screen  -->
+    <string name="app_version">v1.0.0</string>
+    <string name="app_developer">ShadowRPK Studios®</string>
+    <string name="app_development_rights">All rights reserved®</string>
+</resources>
