@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.rgp.firstpractice">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -16,10 +16,10 @@
         android:theme="@style/Theme.FirstPractice"
         tools:targetApi="33">
         <activity
-            android:name=".LyricsDetailActivity"
+            android:name=".view.activities.LyricsCatalogActivity"
             android:exported="false" />
         <activity
-            android:name=".view.activities.LyricsCatalogActivity"
+            android:name=".view.activities.LyricsDetailActivity"
             android:exported="false" />
         <activity
             android:name=".view.activities.SplashActivity"

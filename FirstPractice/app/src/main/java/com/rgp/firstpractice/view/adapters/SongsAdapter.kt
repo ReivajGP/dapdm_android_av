@@ -24,11 +24,11 @@ class SongsAdapter(private val context: Context, private val songs: ArrayList<So
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         Glide.with(context)
-            .load(songs[position].album)
+            .load(songs[position].thumbnail)
             .placeholder(R.drawable.ic_album)
             .into(holder.ivAlbum)
 
-        holder.tvSong.text = songs[position].song
+        holder.tvSong.text = songs[position].title
         holder.tvArtist.text = songs[position].artist
 
         holder.itemView.setOnClickListener {

@@ -4,9 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import com.airbnb.lottie.LottieDrawable
-import com.rgp.firstpractice.R
 import com.rgp.firstpractice.databinding.ActivitySplashBinding
+import com.rgp.firstpractice.utils.Constants
 
 class SplashActivity : AppCompatActivity() {
     lateinit var binding: ActivitySplashBinding
@@ -16,22 +15,15 @@ class SplashActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         startTimer()
-        setAnimation()
-    }
-
-    private fun setAnimation() {
-        binding.animationView.setAnimation(R.raw.book_loader)
-        binding.animationView.repeatCount = LottieDrawable.INFINITE
-        binding.animationView.playAnimation()
-        binding.animationView.speed = 2.0F
     }
 
     private fun startTimer() {
-        object: CountDownTimer(3000, 1000) {
+        object: CountDownTimer(Constants.TIMER_MILLISECONDS, Constants.TIMER_COUNTDOWN_INTERVAL) {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {
                 val intent = Intent(applicationContext, LyricsCatalogActivity::class.java).apply {}
+                finish()
                 startActivity(intent)
             }
         }.start()
