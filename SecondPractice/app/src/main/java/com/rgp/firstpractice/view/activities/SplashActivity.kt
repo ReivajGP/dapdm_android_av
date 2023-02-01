@@ -22,7 +22,7 @@ class SplashActivity : AppCompatActivity() {
             override fun onTick(millisUntilFinished: Long) {}
 
             override fun onFinish() {
-                val intent = Intent(applicationContext, LyricsCatalogActivity::class.java).apply {}
+                val intent = Intent(applicationContext, LoginActivity::class.java).apply {}
                 finish()
                 startActivity(intent)
             }

@@ -2,9 +2,18 @@
     <string name="app_name">FirstPractice</string>
 
     <!--  Splash screen  -->
-    <string name="app_version">v1.0.0</string>
+    <string name="app_version">v1.1.0</string>
     <string name="app_developer">ShadowRPK Studios®</string>
     <string name="app_development_rights">All rights reserved®</string>
+
+    <!--  Login screen  -->
+    <string name="login_title">Inicio de sesión</string>
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_sign_in">Iniciar sesión</string>
+    <string name="invalid_username">Usuario no válido</string>
+    <string name="invalid_password">Contraseña inválida</string>
+    <string name="login_failed">"Error al iniciar sesión"</string>
 
     <!--  Catalog screen  -->
     <string name="catalog_title">Catálogo</string>
@@ -21,4 +30,5 @@
     <!--  Song element  -->
     <string name="song_element_name">Nombre</string>
     <string name="song_element_artist">Artista</string>
+    <string name="title_activity_login">LoginActivity</string>
 </resources>
