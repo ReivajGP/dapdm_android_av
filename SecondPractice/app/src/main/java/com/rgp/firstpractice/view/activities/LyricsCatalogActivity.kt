@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.airbnb.lottie.LottieDrawable
 import com.rgp.firstpractice.R
 import com.rgp.firstpractice.databinding.ActivityLyricsCatalogBinding
+import com.rgp.firstpractice.helpers.AuthenticationHelper
 import com.rgp.firstpractice.model.Lyrics
 import com.rgp.firstpractice.model.Song
 import com.rgp.firstpractice.utils.Constants
@@ -25,13 +26,16 @@ import retrofit2.Response
 class LyricsCatalogActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLyricsCatalogBinding
+    lateinit var user: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
         super.onCreate(savedInstanceState)
         binding = ActivityLyricsCatalogBinding.inflate(layoutInflater)
+        user = intent.getStringExtra(Constants.INTENT_USER_ID).toString()
         setContentView(binding.root)
         setupView()
+        setUpListeners()
 
         CoroutineScope(Dispatchers.IO).launch {
             val apiCall = Constants.getRetrofit().create(SongsAPI::class.java).getSongs(Constants.SONGS_LIST_EP)
@@ -57,7 +61,17 @@ class LyricsCatalogActivity : AppCompatActivity() {
 
     fun setupView() {
         launchLoader()
+        binding.tvUser.text = "${Constants.USER_TEXT_VIEW_BASE_CAPTION}\n$user"
         binding.ivBackground.isVisible = false
+    }
+
+    fun setUpListeners() {
+        binding.ivLogout.setOnClickListener {
+            AuthenticationHelper(this).signOut {
+                startActivity(Intent(this, LoginActivity::class.java))
+                finish()
+            }
+        }
     }
 
     fun songSelected(song: Song) {

@@ -16,5 +16,9 @@ data class Song(
     var composer: String? = null,
     @SerializedName(Constants.SONG_ID_SERIALIZED_NAME)
     var songId: String? = null,
+    @SerializedName(Constants.ARTIST_ORIGIN_LATITUDE_SERIALIZED_NAME)
+    var artistOriginLatitude: Double? = null,
+    @SerializedName(Constants.ARTIST_ORIGIN_LONGITUDE_SERIALIZED_NAME)
+    var artistOriginLongitude: Double? = null,
     var thumbnail: String? = null
 ) : Parcelable

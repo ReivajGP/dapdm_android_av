@@ -1,5 +1,6 @@
 package com.rgp.firstpractice.view.activities
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -32,6 +33,17 @@ class LyricsDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
         song = intent.getParcelableExtra<Song>(Constants.INTENT_SONG_ID)!!
         launchLoader()
+        playLocationAnimation()
+
+        // Set listeners
+        binding.laLocation.setOnClickListener {
+            val intent = Intent(this, MapActivity::class.java).apply {
+                putExtra(Constants.INTENT_ARTIST_ID, song.artist)
+                putExtra(Constants.INTENT_ARTIST_ORIGIN_LATITUDE, song.artistOriginLatitude)
+                putExtra(Constants.INTENT_ARTIST_ORIGIN_LONGITUDE, song.artistOriginLongitude)
+            }
+            startActivity(intent)
+        }
 
         CoroutineScope(Dispatchers.IO).launch {
             val lyricsCall = Constants.getRetrofit().create(SongsAPI::class.java).getLyrics(song.songId)
@@ -48,6 +60,12 @@ class LyricsDetailActivity : AppCompatActivity() {
                 }
             })
         }
+    }
+
+    private fun playLocationAnimation() {
+        binding.laLocation.setAnimation(R.raw.location_animated)
+        binding.laLocation.repeatCount = LottieDrawable.INFINITE
+        binding.laLocation.playAnimation()
     }
 
     private fun launchLoader() {

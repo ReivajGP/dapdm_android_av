@@ -13,8 +13,8 @@ interface SongsAPI {
         @Url url: String
     ): Call<ArrayList<Song>>
 
-    @GET("${Constants.BASE_URL}${Constants.SONGS_LYRICS_EP}/{id}")
+    @GET("${Constants.BASE_URL}${Constants.SONGS_LYRICS_EP}/{${Constants.ID_PARAM_SERIALIZED_NAME}}")
     fun getLyrics(
-        @Path("id") id: String?
+        @Path(Constants.ID_PARAM_SERIALIZED_NAME) id: String?
     ): Call<Lyrics>
 }

@@ -10,4 +10,5 @@
 
     <!--  Custom colors  -->
     <color name="list_separator_gray">#EEEEEE</color>
+    <color name="button_pass_recover_blue">#688AFF</color>
 </resources>
