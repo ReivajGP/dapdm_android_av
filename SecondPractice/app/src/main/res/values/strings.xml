@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">SecondPractice</string>
+
+    <!--  Splash screen  -->
+    <string name="app_version">v1.1.0</string>
+    <string name="app_developer">ShadowRPK Studios®</string>
+    <string name="app_development_rights">All rights reserved®</string>
+
+    <!--  Login screen  -->
+    <string name="login_title">Inicio de sesión</string>
+    <string name="prompt_email">Correo</string>
+    <string name="prompt_password">Contraseña</string>
+    <string name="action_log_in">Iniciar sesión</string>
+    <string name="action_sign_in">Registrarse</string>
+    <string name="action_recover_pass">¿Olvidaste tu contraseña?</string>
+
+    <!--  Catalog screen  -->
+    <string name="catalog_title">Catálogo</string>
+
+    <!--  Detail screen -->
+    <string name="detail_title">Título</string>
+    <string name="detail_artist">Artista</string>
+    <string name="detail_album">Álbum</string>
+    <string name="detail_release_date">Año</string>
+    <string name="detail_genre">Género</string>
+    <string name="detail_composer">Compositor</string>
+    <string name="detail_lyrics">Letra</string>
+
+    <!--  Song element  -->
+    <string name="song_element_name">Nombre</string>
+    <string name="song_element_artist">Artista</string>
+    <string name="title_activity_login">LoginActivity</string>
+</resources>
